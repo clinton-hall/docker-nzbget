@@ -116,10 +116,10 @@ RUN \
     /root/.cache \
     /root/.cargo \
     /tmp/* \
-  echo "**** install custom packages ****" \
-  apk add --no-cache \
-  git \
-  ffmpeg && \ 
+echo "**** install custom packages ****" \
+apk add --no-cache && \
+git \
+ffmpeg && \ 
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget \
 COPY root/ /
