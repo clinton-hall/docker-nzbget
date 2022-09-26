@@ -111,19 +111,19 @@ RUN \
     rarfile \
     six \
     wheel && \
+  
   ln -s /usr/bin/python3 /usr/bin/python && \
     rm -rf \
     /root/.cache \
     /root/.cargo \
-    /tmp/*
+    /tmp/* \
 #echo "**** install custom packages ****" && \
 #echo "**** install nzbtomedia ****" && \
     #apk add --no-cache git && \
-RUN \
-  git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget \
-COPY root/ /
+COPY root/ / \
+git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia
 
 # ports and volumes
 VOLUME /config
