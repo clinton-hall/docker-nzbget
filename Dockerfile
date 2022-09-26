@@ -116,7 +116,7 @@ RUN \
 #echo "**** install custom packages ****" && \
 RUN apk add --no-cache git ffmpeg \
 echo "**** cleanup ****" && \
-  apk del --purge \
+    apk del --purge \
     build-dependencies && \
 
 # add local files and files from buildstage
