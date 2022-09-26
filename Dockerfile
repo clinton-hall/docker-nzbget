@@ -115,7 +115,7 @@ RUN \
   rm -rf \
     /root/.cache \
     /root/.cargo \
-    /tmp/*
+    /tmp/* &&
 
   RUN \
   echo "**** install custom packages ****" && \
