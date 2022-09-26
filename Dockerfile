@@ -109,9 +109,6 @@ RUN \
     rarfile \
     six && \
   ln -s /usr/bin/python3 /usr/bin/python && \
-  echo "**** cleanup ****" && \
-  apk del --purge \
-    build-dependencies && \
   rm -rf \
     /root/.cache \
     /root/.cargo \
@@ -119,11 +116,15 @@ RUN \
 
 RUN \
 echo "**** install custom packages ****" && \
-#apk add --no-cache \
-#git \
-#ffmpeg && \ 
+apk add --no-cache \
+git \
+ffmpeg && \ 
+echo "**** cleanup ****" && \
+  apk del --purge \
+    build-dependencies && \
 
 # add local files and files from buildstage
+RUN \
 COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
 
