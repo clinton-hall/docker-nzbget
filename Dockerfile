@@ -114,9 +114,7 @@ RUN \
     /root/.cargo \
     /tmp/*
 #echo "**** install custom packages ****" && \
-apk add --no-cache \
-git \
-ffmpeg && \ 
+  apk add --no-cache git ffmpeg \
 echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
