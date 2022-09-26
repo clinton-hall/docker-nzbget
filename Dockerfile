@@ -129,4 +129,4 @@ RUN \
 echo "**** install extra packages ****" \
   apk add --no-cache \
     git \
-    ffmpeg && \
+    ffmpeg \
