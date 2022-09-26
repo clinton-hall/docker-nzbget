@@ -117,6 +117,12 @@ RUN \
     /root/.cargo \
     /tmp/*
 
+  RUN \
+  echo "**** install custom packages ****" && \
+apk add --no-cache \
+    git \
+    ffmpeg && \
+
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
@@ -125,8 +131,3 @@ COPY root/ /
 VOLUME /config
 EXPOSE 6789
 
-RUN \
-  echo "**** install custom packages ****" && \
-apk add --no-cache \
-    git \
-    ffmpeg && \
