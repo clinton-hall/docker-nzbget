@@ -113,7 +113,7 @@ RUN \
     /root/.cache \
     /root/.cargo \
     /tmp/*
-echo "**** install custom packages ****" && \
+#echo "**** install custom packages ****" && \
 apk add --no-cache \
 git \
 ffmpeg && \ 
