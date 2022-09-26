@@ -109,22 +109,23 @@ RUN \
     rarfile \
     six && \
   ln -s /usr/bin/python3 /usr/bin/python && \
-  rm -rf \
-    /root/.cache \
-    /root/.cargo \
-    /tmp/*
-#echo "**** install custom packages ****" && \
-RUN \
-apk add --no-cache git ffmpeg && \
-#echo "**** cleanup ****" && \
+  apk add --no-cache git ffmpeg \
+  echo "**** cleanup ****" && \
     apk del --purge \
     build-dependencies && \
     echo "**** install nzbtomedia ****" && \
     #apk add --no-cache git && \
-    mkdir -p /app/nzbget/scripts && \
-    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia \
+    #mkdir -p /app/nzbget/scripts && \
+    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
+    rm -rf \
+    /root/.cache \
+    /root/.cargo \
+    /tmp/*
+#echo "**** install custom packages ****" && \
+
+  
 # add local files and files from buildstage
-RUN \
+
 COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ /
 
