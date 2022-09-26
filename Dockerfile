@@ -110,10 +110,10 @@ RUN \
     six && \
   ln -s /usr/bin/python3 /usr/bin/python && \
   apk add --no-cache git ffmpeg \
-  echo "**** cleanup ****" && \
+  echo "**** cleanup ****" \
     apk del --purge \
     build-dependencies && \
-    echo "**** install nzbtomedia ****" && \
+    echo "**** install nzbtomedia ****" \
     #apk add --no-cache git && \
     #mkdir -p /app/nzbget/scripts && \
     git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
