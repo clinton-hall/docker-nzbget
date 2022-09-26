@@ -131,4 +131,4 @@ echo "**** install extra packages ****" && \
     git \
     ffmpeg \
 #
-git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia && \
+git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia \
