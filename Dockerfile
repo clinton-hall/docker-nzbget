@@ -129,7 +129,7 @@ RUN \
 echo "**** install extra packages ****" && \
   apk add --no-cache \
     git \
-    ffmpeg && \
+    ffmpeg \
 
 RUN \
 git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
