@@ -130,4 +130,4 @@ echo "**** install extra packages ****" && \
   apk add --no-cache \
     git \
     ffmpeg \
-git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
+git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia \
