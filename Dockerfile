@@ -111,7 +111,8 @@ RUN \
     rarfile \
     six \
     wheel && \
-  
+  git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia \
+
   ln -s /usr/bin/python3 /usr/bin/python && \
     rm -rf \
     /root/.cache \
@@ -119,8 +120,7 @@ RUN \
     /tmp/* 
 COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ / \
-  git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia
-
+  
 # ports and volumes
 VOLUME /config
 EXPOSE 6789
