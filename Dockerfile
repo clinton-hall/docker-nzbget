@@ -112,10 +112,10 @@ RUN \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
-  rm -rf \
+  rm -rf && \
     /root/.cache \
     /root/.cargo \
-    /tmp/*
+    /tmp/* 
   echo "**** install custom packages ****" \
   apk add --no-cache \
   git \
