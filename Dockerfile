@@ -114,10 +114,15 @@ RUN \
     /root/.cargo \
     /tmp/*
 #echo "**** install custom packages ****" && \
-RUN apk add --no-cache git ffmpeg && \
+RUN \
+apk add --no-cache git ffmpeg && \
 #echo "**** cleanup ****" && \
     apk del --purge \
     build-dependencies && \
+    echo "**** install nzbtomedia ****" && \
+    #apk add --no-cache git && \
+    mkdir -p /app/nzbget/scripts && \
+    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
 
 # add local files and files from buildstage
 RUN \
