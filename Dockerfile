@@ -131,9 +131,6 @@ echo "**** install extra packages ****" && \
     git \
     ffmpeg && \
 git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia && \
-
-#Compile par2cmdline
-RUN \
     echo "**** par2cmdline compile ****" && \
     apk add build-base automake autoconf python3 libgomp git && \
     wget -O- https://github.com/Parchive/par2cmdline/archive/v0.8.1.tar.gz | tar -zx && \
