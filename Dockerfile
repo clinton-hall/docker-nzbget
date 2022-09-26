@@ -116,14 +116,10 @@ RUN \
     rm -rf \
     /root/.cache \
     /root/.cargo \
-    /tmp/* \
-#echo "**** install custom packages ****" && \
-#echo "**** install nzbtomedia ****" && \
-    #apk add --no-cache git && \
-# add local files and files from buildstage
-COPY --from=buildstage /app/nzbget /app/nzbget \
+    /tmp/* 
+COPY --from=buildstage /app/nzbget /app/nzbget
 COPY root/ / \
-git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia
+  git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia
 
 # ports and volumes
 VOLUME /config
