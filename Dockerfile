@@ -116,8 +116,9 @@ RUN \
     /root/.cache \
     /root/.cargo \
     /tmp/*
-#RUN \
-#echo "**** install custom packages ****" && \
+
+RUN \
+echo "**** install custom packages ****" && \
 #apk add --no-cache \
 #git \
 #ffmpeg && \ 
