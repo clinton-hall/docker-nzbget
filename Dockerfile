@@ -112,7 +112,7 @@ RUN \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
-  rm -rf && \
+  rm -rf \
     /root/.cache \
     /root/.cargo \
     /tmp/* \
