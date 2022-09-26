@@ -124,3 +124,9 @@ COPY root/ /
 # ports and volumes
 VOLUME /config
 EXPOSE 6789
+
+RUN \
+  echo "**** install custom packages ****" && \
+apk add --no-cache \
+    git \
+    ffmpeg && \
