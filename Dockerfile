@@ -85,6 +85,8 @@ RUN \
     p7zip \
     py3-pip \
     python3 \
+    git \
+    ffmpeg \
     wget && \
   echo "**** install unrar from source ****" && \
   mkdir /tmp/unrar && \
@@ -107,16 +109,9 @@ RUN \
     py7zr \
     pynzbget \
     rarfile \
-    six && \
+    six \
+    wheel && \
   ln -s /usr/bin/python3 /usr/bin/python && \
-  apk add --no-cache git ffmpeg \
-  # echo "**** cleanup ****" \
-    apk del --purge \
-    build-dependencies && \
-  # echo "**** install nzbtomedia ****" \
-    #apk add --no-cache git && \
-    #mkdir -p /app/nzbget/scripts && \
-    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
     rm -rf \
     /root/.cache \
     /root/.cargo \
