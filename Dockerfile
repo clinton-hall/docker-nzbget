@@ -85,8 +85,6 @@ RUN \
     p7zip \
     py3-pip \
     python3 \
-    git \
-    ffmpeg \
     wget && \
   echo "**** install unrar from source ****" && \
   mkdir /tmp/unrar && \
@@ -109,18 +107,26 @@ RUN \
     py7zr \
     pynzbget \
     rarfile \
-    six \
-    wheel && \
-  git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia \
-
+    six && \
   ln -s /usr/bin/python3 /usr/bin/python && \
-    rm -rf \
+  echo "**** cleanup ****" && \
+  apk del --purge \
+    build-dependencies && \
+  rm -rf \
     /root/.cache \
     /root/.cargo \
-    /tmp/* 
+    /tmp/*
+
+# add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget
-COPY root/ / \
-  
+COPY root/ /
+
 # ports and volumes
 VOLUME /config
 EXPOSE 6789
+
+RUN \
+echo "**** install packages ****" && \
+  apk add --no-cache \
+    git \
+    ffmpeg \
