@@ -86,8 +86,7 @@ RUN \
     py3-pip \
     python3 \
     wget && \
-RUN \
-echo "**** install custom packages ****" && \
+  echo "**** install custom packages ****" && \
   apk add --no-cache \
   git \
   ffmpeg && \  
