@@ -115,7 +115,7 @@ RUN \
     /tmp/*
 #echo "**** install custom packages ****" && \
 RUN apk add --no-cache git ffmpeg \
-echo "**** cleanup ****" && \
+#echo "**** cleanup ****" && \
     apk del --purge \
     build-dependencies && \
 
