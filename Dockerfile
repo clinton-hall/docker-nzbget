@@ -43,6 +43,7 @@ RUN \
     -e "s#^InterDir=.*#InterDir=$\{MainDir\}/intermediate#g" \
     -e "s#^LogFile=.*#LogFile=$\{MainDir\}/nzbget.log#g" \
     -e "s#^AuthorizedIP=.*#AuthorizedIP=127.0.0.1#g" \
+    -e "s#^ControlPort=.*#ControlPort=7777#g" \
   /app/nzbget/share/nzbget/nzbget.conf && \
   mv /app/nzbget/share/nzbget/webui /app/nzbget/ && \
   cp /app/nzbget/share/nzbget/nzbget.conf /app/nzbget/webui/nzbget.conf.template && \
@@ -130,7 +131,7 @@ echo "**** install extra packages ****" && \
   apk add --no-cache \
     git \
     ffmpeg && \
-git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia && \
+    git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia && \
     echo "**** par2cmdline compile ****" && \
     apk add build-base automake autoconf python3 libgomp git && \
     wget -O- https://github.com/Parchive/par2cmdline/archive/v0.8.1.tar.gz | tar -zx && \
