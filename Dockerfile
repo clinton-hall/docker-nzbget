@@ -115,7 +115,7 @@ RUN \
   rm -rf \
     /root/.cache \
     /root/.cargo \
-    /tmp/* \
+    /tmp/*
   echo "**** install custom packages ****" && \
   apk add --no-cache \
   git \
