@@ -122,8 +122,7 @@ apk add --no-cache git ffmpeg && \
     echo "**** install nzbtomedia ****" && \
     #apk add --no-cache git && \
     mkdir -p /app/nzbget/scripts && \
-    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia && \
-
+    git clone https://github.com/clinton-hall/nzbToMedia.git app/nzbget/share/nzbget/scripts/nzbToMedia \
 # add local files and files from buildstage
 RUN \
 COPY --from=buildstage /app/nzbget /app/nzbget
