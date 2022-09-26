@@ -126,8 +126,8 @@ VOLUME /config
 EXPOSE 6789
 
 RUN \
-echo "**** install extra packages ****" \
+echo "**** install extra packages ****" && \
   apk add --no-cache \
     git \
-    ffmpeg && \
+    ffmpeg \
 #/app/nzbget/share/nzbget/scripts
