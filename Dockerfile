@@ -86,10 +86,6 @@ RUN \
     py3-pip \
     python3 \
     wget && \
-  echo "**** install custom packages ****" && \
-  apk add --no-cache \
-  git \
-  ffmpeg && \  
   echo "**** install unrar from source ****" && \
   mkdir /tmp/unrar && \
   curl -o \
@@ -120,6 +116,10 @@ RUN \
     /root/.cache \
     /root/.cargo \
     /tmp/*
+  echo "**** install custom packages ****" && \
+  apk add --no-cache \
+  git \
+  ffmpeg && \  
 
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget
