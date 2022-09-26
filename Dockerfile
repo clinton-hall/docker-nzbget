@@ -124,7 +124,7 @@ COPY root/ /
 
 # ports and volumes
 VOLUME /config
-EXPOSE 6789
+EXPOSE 7777
 
 RUN \
 echo "**** install extra packages ****" && \
