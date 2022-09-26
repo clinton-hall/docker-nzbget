@@ -32,7 +32,7 @@ RUN \
   make prefix=/app/nzbget install && \
   sed -i \
     -e "s#^MainDir=.*#MainDir=/downloads#g" \
-    -e "s#^ScriptDir=.*#ScriptDir=$\{MainDir\}/scripts#g" \
+    -e "s#^ScriptDir=.*#ScriptDir=$\{AppDir\}/share/nzbget/scripts#g" \
     -e "s#^WebDir=.*#WebDir=$\{AppDir\}/webui#g" \
     -e "s#^ConfigTemplate=.*#ConfigTemplate=$\{AppDir\}/webui/nzbget.conf.template#g" \
     -e "s#^UnrarCmd=.*#UnrarCmd=$\{AppDir\}/unrar#g" \
