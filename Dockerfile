@@ -120,7 +120,8 @@ RUN \
 
 # add local files and files from buildstage
 COPY --from=buildstage /app/nzbget /app/nzbget
-COPY root/ /
+COPY /root/ /root/
+#COPY root/ /
 
 # ports and volumes
 VOLUME /config
