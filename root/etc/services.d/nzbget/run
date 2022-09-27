@@ -9,7 +9,10 @@ if [[ ${NZBGET_PASS} && ${NZBGET_PASS-x} ]]; then
   OPTIONS+="-o ControlPassword=${NZBGET_PASS} "
 fi
 #git nzbToMedia Start
-[ -d /app/nzbget/share/nzbget/scripts/nzbToMedia/.git ] || s6-setuidgid abc HOME=/home/abc git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia
+if [[ !-d /app/nzbget/share/nzbget/scripts/nzbToMedia/.git ]]; then
+  export HOME=/home/abc 
+  s6-setuidgid abc git clone https://github.com/clinton-hall/nzbToMedia.git /app/nzbget/share/nzbget/scripts/nzbToMedia
+fi
 #end
 exec \
     s6-setuidgid abc /app/nzbget/nzbget -s -c /config/nzbget.conf \
